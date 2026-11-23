@@ -6,7 +6,8 @@ Created on Tue Dec 13 14:26:20 2022
 """
 
 import shutil
-folder_path = 'C:/Users/maham/Documents/Master 2 SID/TER Projet/storage/storage'
+folder_path = 'C:/Users/issoufou/Documents/Projet_TER/storage'
+
 import os
 ext = ('html', 'pdf')
 for path, dirs, files in os.walk(folder_path):
