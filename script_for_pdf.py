@@ -6,7 +6,7 @@ Created on Tue Dec 13 14:26:20 2022
 """
 
 import shutil
-folder_path = 'C:/Users/issoufou/Documents/Projet_TER/storage'
+folder_path = 'C:/test/'
 
 import os
 ext = ('html', 'pdf')
@@ -18,7 +18,7 @@ for path, dirs, files in os.walk(folder_path):
             print(id_+'.'+extention)
 
             src_path = os.path.join(path, filename)
-            dst_path = os.path.join(r'/folder2', id_+'.'+extention)
+            dst_path = os.path.join(r'C:/Users/test', id_+'.'+extention)
             shutil.copy(src_path, dst_path)
 
 
