@@ -6,6 +6,9 @@ Created on Tue Dec 13 14:26:20 2022
 """
 
 import shutil
+
+from PyPDF2 import PdfReader
+import pandas as pd
 folder_path = 'C:/test/'
 
 import os
@@ -22,8 +25,6 @@ for path, dirs, files in os.walk(folder_path):
             shutil.copy(src_path, dst_path)
 
 
-from PyPDF2 import PdfReader
-import pandas as pd
 
 
 path = 'chemin/'
@@ -44,7 +45,7 @@ def test ():
 df = pd.DataFrame(results, columns=["name",'page_number'])
 df.to_csv('list.csv', index=False)
 
-d =  pd.read_csv('C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder/list.csv')
+d =  pd.read_csv('d/tset/new_folder/list.csv')
 
 print(d.head()) 
 
