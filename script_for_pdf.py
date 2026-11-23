@@ -18,7 +18,7 @@ for path, dirs, files in os.walk(folder_path):
             print(id_+'.'+extention)
 
             src_path = os.path.join(path, filename)
-            dst_path = os.path.join(r'C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder1', id_+'.'+extention)
+            dst_path = os.path.join(r'/folder2', id_+'.'+extention)
             shutil.copy(src_path, dst_path)
 
 
@@ -26,7 +26,7 @@ from PyPDF2 import PdfReader
 import pandas as pd
 
 
-path = 'C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder/'
+path = 'chemin/'
 results = []
 for file in os.listdir(path):
     if file.endswith('pdf'):
