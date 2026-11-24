@@ -11,9 +11,11 @@ import requests
 from bs4 import BeautifulSoup
 import urllib 
 from urllib.request import urlopen
+import pandas as pd
 
-path = 'C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder/'
-for file in os.listdir(path):
+
+BASE_DIR = "./data"
+for file in os.listdir(BASE_DIR):
     if file.endswith('html'):
         print(file)
         #requete = requests.get('http://' + file)
@@ -22,14 +24,9 @@ for file in os.listdir(path):
         contents = html.read()
         print(contents)
         
-import os
-from bs4 import BeautifulSoup
-
 lisT = []
-# Set the directory you want to start from
-rootDir = 'C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder/'
 
-for dirName, subdirList, fileList in os.walk(rootDir):
+for dirName, subdirList, fileList in os.walk(BASE_DIR):
     print('Found directory: %s' % dirName)
     for fname in fileList:
         # Check if the file is an HTML file
@@ -54,7 +51,7 @@ for dirName, subdirList, fileList in os.walk(rootDir):
             # lisT.append([fname,lang])
             # print(lisT)
 
-import pandas as pd
+
 
 df = pd.DataFrame(lisT, columns=["key",'Lang'])
 df.to_csv('List_Lang.csv', index=False)
@@ -62,11 +59,6 @@ df.to_csv('List_Lang.csv', index=False)
 d =  pd.read_csv('C:/Users/maham/Documents/Master 2 SID/TER Projet/List_Lang.csv')
 
 print(d.head(40))
-
-
-#how to extract author html
-from bs4 import BeautifulSoup
-import os
 
 folder =  'C:/Users/maham/Documents/Master 2 SID/TER Projet/new_folder1/'
 
