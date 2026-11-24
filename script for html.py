@@ -55,7 +55,7 @@ for dirName, subdirList, fileList in os.walk(BASE_DIR):
 
 df = pd.DataFrame(lisT, columns=["key",'Lang'])
 df.to_csv('List_Lang.csv', index=False)
-
+df.to_json('List_Lang.json', orient='records')
 d =  pd.read_csv('C:/Users/maham/Documents/Master 2 SID/TER Projet/List_Lang.csv')
 
 print(d.head(40))
